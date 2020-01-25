@@ -1,1 +1,1 @@
-# bogya345.githib.io
+# bogya345.github.io
