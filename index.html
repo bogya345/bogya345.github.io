@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html>
+	
+<head>
+
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/styles.css">
+
+	<!--Google Font link-->
+	<link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+
+    <title>Profile</title>
+
+	<style>
+		.row div{padding:20px 10px; border: 1px solid;}
+
+		:root{
+			--width:100px;
+		}
+
+		.font-fix{
+
+		}
+
+		@media(max-width:600px){
+			[class*="font-fix"] {
+				font-size: 10px !important;
+			}
+		}
+		
+		body{
+			font-family: 'Muli', sans-serif;
+
+			/*background-color: blue;
+			animation: bg-anim 2s linear infinite;*/
+		}
+
+		@keyframes bg-anim {
+			0%{background-color: aquamarine;}
+			50%{background-color: green;}
+			75%{background-color: greenyellow;}
+			100%{background-color: black;}			
+		}
+		
+		.preloader>.container>.circle{
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			box-sizing: border-box;
+			transform: rotate(45deg);
+			transform-origin: 50px 50px;
+			animation: anim-circle 5s ease-in-out infinite, anim-color 2s linear infinite;
+		}
+
+		@keyframes anim-circle{
+			from{ transform: rotate(45deg); }
+			10%{ transform: rotate(45deg); }
+			50%{ transform: rotate(405deg); }
+			to{ transform: rotate(405deg); }
+		}
+
+		@keyframes anim-color{
+			0%{ background: rgb(155, 42, 42); }
+			25%{ background: rgb(53, 199, 85); }
+			50%{ background: rgb(99, 107, 218); }
+			75%{ background: rgb(103, 36, 211); }
+			100%{ background: rgb(194, 43, 88); }
+		}
+
+		.preloader>.container>.circle:nth-child(2){
+			animation-delay: .2s;
+		}
+		.preloader>.container>.circle:nth-child(3){
+			animation-delay: .4s;
+		}
+		.preloader>.container>.circle:nth-child(4){
+			animation-delay: .6s;
+		}
+		.preloader>.container>.circle:nth-child(5){
+			animation-delay: .8s;
+		}
+		.preloader>.container>.circle:nth-child(6){
+			animation-delay: 1s;
+		}
+		.preloader>.container>.circle:nth-child(7){
+			animation-delay: 1.2s;
+		}
+		.preloader>.container>.circle:nth-child(8){
+			animation-delay: 1.4s;
+		}
+	</style>
+	
+	<script>
+		var txt = document.getElementById('txt');
+		console.log(txt);
+		txt.value = "asdf1";
+
+		var txt = document.getElementByClassName('test')[0];
+		console.log(txt);
+		txt.value = "asdf2";
+
+		$('div').prop('style', 'width:100px;') //resize all div's on page
+
+		$(document).on('click', '#txt', function(){
+			console.log('lol');
+		});
+
+		for(var i=0;i<10;i++)
+		{
+			console.log(i);
+		}
+
+		for(const key in a)
+		{
+			console.log(`key: ${key}, value: ${a[key]}`);
+		}
+
+		function createObj()
+		{
+			return {name:'name', value:'value'};
+		}
+
+		for(var i=0;i<5;i++)
+		{
+			createObj();
+		}
+
+		$('#hidden').hide();
+
+		setTimeOut(function(){
+			$('#preloader_').hide();
+			$('#hidden_').show();
+		},5000);
+	</script>
+</head>
+
+<body>
+	
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #e3f2fd;">
+	  <a class="navbar-brand" href="#">Bogdan Volkov</a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	    <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a href="#profile" class="nav-link">Profile <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	      	<a href="#photos" class="nav-link">Photos</a>
+	      </li>
+	      <li class="nav-item">
+	      	<a href="#abilities" class="nav-link">Abilities</a>
+	      </li>
+	      <li class="nav-item">
+	      	<a href="#musicpreference" class="nav-link">Music preferences</a>
+	      </li>
+	      <li class="nav-item">
+	      	<a href="#videos" class="nav-link">Videos</a>
+	      </li>
+	      <li class="nav-item dropdown">
+	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	          Dropdown link
+	        </a>
+	        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	          <a class="dropdown-item" href="#">Action</a>
+	          <a class="dropdown-item" href="#">Another action</a>
+	          <a class="dropdown-item" href="#">Something else here</a>
+	        </div>
+	      </li>
+	      <li class="nav-item">
+	      	<div class="nav-link">-!MUSIC nav-item!-</div>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+
+
+	<div class="container">
+
+		<!--PROFILE-->
+      <div class="row">
+      	<div id="profile" class="col-12 between-conteiners helper"></div>
+      	<div class="h3">Profile</div>
+      </div>
+      <div class="d-flex flex-wrap">
+      	<div id="carouselExampleIndicators" class="p-2 carousel slide" data-ride="carousel" style="background-color: #333;">
+			<ol class="carousel-indicators">
+			  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+			  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+			  <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+			</ol>
+			<div class="carousel-inner" style="background-color: #444;">
+			  <div class="carousel-item active">
+			    <img class="d-block w-100" src="images/1.jpg" alt="First slide">
+			  </div>
+			  <div class="carousel-item">
+			    <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
+			  </div>
+			  <div class="carousel-item">
+			    <img class="d-block w-100" src="images/1.jpg" alt="Third slide">
+			  </div>
+			  <div class="carousel-item">
+			    <img class="d-block w-100" src="images/1.jpg" alt="Fourth slide">
+			  </div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			  <span class="sr-only">Next</span>
+			</a>
+      	</div>
+		<div class="col p-2 flex-fill align-self-center">
+			<div class="col">
+         <div class="col rounded" style="background-color: #555;">
+            <p><mark>Fullname:</mark> Volkov Bogdan </p>
+            <p><mark>Sex:</mark> Male </p>
+            <p><mark>Birth date:</mark> 15/04/1999 </p>
+
+            <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline" style="color: #111;">Contacts:</span></a>
+            <div class="collapse" id="submenu1" aria-expanded="false">
+              <ul class="flex-column pl-2 nav">
+                <li class="nav-item"><a class="nav-link py-0" href="#"><span>Github: https://lolik.com</span></a></li>
+                <li class="nav-item"><a class="nav-link py-0" href="#"><span>VK: https://vk.com</span></a></li>
+                <li class="nav-item"><a class="nav-link py-0" href="#"><span>LOL</span></a></li>
+              </ul>
+            </div>
+          </div>   
+      </div>
+		</div>
+      </div>
+      
+      <!--PHOTOS-->
+      <div class="row indentation-rows">
+      	<div id="photos" class="col-12 between-conteiners helper"></div>
+      	<div class="h3">Photos</div>
+      </div>
+      <div class="row">
+
+			<div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+		
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                <a href="" class="fancybox" rel="ligthbox">
+                    <img  src="images/photos/1.jpg" class="zoom img-fluid "  alt="">
+                </a>
+            </div>
+
+      </div>
+      
+
+      <!--ABILITIES-->
+      <div class="row indetation-rows">
+      	<div id="abilities" class="col-12 between-conteiners helper"></div>
+      	<div class="h3">Abilities</div>
+      </div>
+      <div class="row">
+
+      	<!-- ABILITY -->
+      	<div class="col-3" style="background-color: #666;">
+      		<div class="container-fluid" style="background-color: #42d460;">
+    
+		        <div class="col-2 collapse show d-md-flex pt-2 pl-0 min-vh-100" id="sidebar" style="border: 0px;">
+		            <ul class="nav flex-column flex-nowrap overflow-hidden" style="background-color: #1f2a7c;">
+		                <li class="nav-item">
+		                    <a class="nav-link text-truncate" href="#ability1"><i class="fa fa-home"></i> <span class="d-none d-sm-inline">ABILITY1</span></a>
+		                </li>
+		                <li class="nav-item"><a class="nav-link text-truncate" href="#ability2"><i class="fa fa-bar-chart"></i> <span class="d-none d-sm-inline">ABILITY2</span></a></li>
+		                <li class="nav-item"><a class="nav-link text-truncate" href="#ability3"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">ABILITY3</span></a></li>
+		                <li class="nav-item"><a class="nav-link text-truncate" href="#ability4"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">ABILITY4</span></a></li>
+		                <li class="nav-item"><a class="nav-link text-truncate" href="#ability5"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">ABILITY5</span></a></li>
+		                <li class="nav-item"><a class="nav-link text-truncate" href="#ability6"><i class="fa fa-download"></i> <span class="d-none d-sm-inline">ABILITY6</span></a></li>
+
+						        <li class="nav-item">
+		                    <a class="nav-link collapsed text-truncate" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="fa fa-table"></i> <span class="d-none d-sm-inline">Programming Langs</span></a>
+		                    <div class="collapse" id="submenu1" aria-expanded="false">
+		                        <ul class="flex-column pl-2 nav">
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>C#</span></a></li>
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>C++/CLI</span></a></li>
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>Python</span></a></li>
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>R</span></a></li>
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>Ruby</span></a></li>
+		                            <li class="nav-item"><a class="nav-link py-0" href="#"><span>Go</span></a></li>
+		                        </ul>
+		                    </div>
+		                </li>
+
+		            </ul>
+		        </div>
+		        
+		    
+		</div>
+      	</div>
+      	<!-- CONTENT OF ABILITY -->
+      	<div class="col-9" style="background-color: #666; height: 400px; overflow-y: scroll;">
+      		<div id="ability1" class="row">
+      			<p>ABILITY1</p>
+      		</div>
+      		<div id="ability1" class="row">
+      			<p>TEXT</p>
+      		</div>
+      		<div id="ability2" class="row">
+      			<p>ABILITY2</p>
+      		</div>
+      		<div id="ability1" class="row">
+      			<p>TEXT</p>
+      		</div>
+      		<div id="ability3" class="row">
+      			<p>ABILITY3</p>
+      		</div>
+      		<div id="ability1" class="row">
+      			<p>TEXT</p>
+      		</div>
+      		<div id="ability4" class="row">
+      			<p>ABILITY4</p>
+      		</div>
+      		<div id="ability1" class="row">
+      			<p>TEXT</p>
+      		</div>
+      		<div id="ability5" class="row">
+      			<p>ABILITY5</p>
+      		</div>
+      		<div id="ability1" class="row">
+      			<p>TEXT</p>
+      		</div>
+      	</div>
+      </div>
+
+      <!--MUSICPREFERENCES-->
+      <div class="row indentatoin-rows">
+      	<div id="musicpreference" class="col-12 between-conteiners helper"></div>
+      	<div class="h3">Music preferences</div>
+      </div>
+      <div class="row">
+      	<div class="col">CONTENT</div>
+      </div>
+      
+      <!--VIDEOS-->
+      <div class="row indentation-rows">
+      	<div id="videos" class="col-12 between-conteiners helper"></div>
+      	<div class="h3">Videos</div>
+      </div>
+      <div class="row">
+      	<div class="col font-fix">
+			<!-- <input id="txt"> -->
+			Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam hic harum quia mollitia, ratione animi excepturi nulla atque voluptate alias tempore quaerat facere aperiam facilis. Architecto quos fuga eius distinctio?
+			Iure iusto facilis, eligendi provident soluta similique nulla perferendis? Aspernatur iusto, id tenetur et eum doloremque perferendis cum laborum deleniti neque aut quidem quos laboriosam nostrum ea inventore eaque rerum.
+			Iste tempore, ullam magnam dignissimos voluptate itaque repellat recusandae possimus fuga excepturi nemo eum? Tempore consectetur ducimus sunt eius perspiciatis omnis, animi, esse itaque debitis nemo, incidunt nisi enim neque.
+			Provident unde quia fuga temporibus quasi incidunt necessitatibus iste consectetur a tenetur debitis id deserunt corrupti, sequi, laboriosam repellat ad vitae veniam adipisci optio obcaecati earum fugiat! Voluptates, quas pariatur!
+			Commodi beatae placeat quae debitis nemo quia voluptate iste. Sint expedita facere explicabo ipsam nostrum adipisci dolorum magnam! Corporis cumque itaque porro ducimus obcaecati minima quos, accusamus mollitia aliquam at?
+			Delectus perspiciatis est obcaecati ad perferendis? Perspiciatis reprehenderit consequatur nihil eaque iusto voluptatibus dolores, esse, deserunt possimus sed cum error reiciendis vero at porro veniam excepturi quia repellendus animi adipisci.
+			Alias recusandae asperiores quaerat, amet eaque minima blanditiis obcaecati adipisci voluptates accusantium odio doloremque consequatur, rerum quod. Minus cumque odio illo vitae, deleniti ipsam, enim eaque officia, voluptatem tempora nostrum.
+			Consectetur nihil quae quod officia alias sint aliquam maxime et sapiente sed. Eligendi, ab similique beatae, nulla molestias molestiae ullam in consectetur, reprehenderit est quas temporibus aperiam atque et eos.
+			Nulla aut est fugiat aspernatur itaque, ipsa magni libero beatae mollitia provident eligendi amet nisi nobis reprehenderit? Et ducimus temporibus ipsam beatae repudiandae eligendi cupiditate, deserunt sed aspernatur, dolore ex.
+			Quia ratione natus at perspiciatis adipisci quo eius deleniti quam ex repellat non odio sint quibusdam explicabo totam ullam aliquam, perferendis, dolor voluptatibus molestiae, a sequi. Vero at laboriosam ipsum!
+			
+			<div class="preloader" id="preloader_">
+				<div class="container">
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+					<div class="circle"></div>
+				</div>
+			</div>
+
+			<div class="hidden" id="hidden_">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, iste.
+			Commodi repudiandae earum officiis maxime et illo dolorem molestiae rem.
+			Animi sint inventore hic. Earum itaque quae quos tenetur quisquam?</div>
+
+		</div>
+      </div>
+
+    </div>
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
