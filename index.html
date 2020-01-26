@@ -7,7 +7,7 @@
 	<!-- Required meta tags a -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -37,6 +37,8 @@
 		
 		body{
 			font-family: 'Muli', sans-serif;
+
+			background-color: azure;
 
 			/*background-color: blue;
 			animation: bg-anim 2s linear infinite;*/
@@ -99,13 +101,39 @@
 	</style>
 	
 	<script>
-		var txt = document.getElementById('txt');
-		console.log(txt);
-		txt.value = "asdf1";
 
-		var txt = document.getElementByClassName('test')[0];
-		console.log(txt);
-		txt.value = "asdf2";
+		$(document).ready(function(){
+			var switchmode = false;
+
+			document.getElementById('darkmode').addEventListener('click', function() {
+			if(switchmode == true)
+			{
+				console.log("casual mode");
+				document.body.style = 'background-color: azure;';
+			}
+			else
+			{
+				console.log("dark mode");
+				document.body.style = 'background-color: rgb(20, 30, 44)';
+			}
+			switchmode = !switchmode;
+			});
+
+			$('#hidden').hide();
+
+			setTimeout(()=>{
+				$('#preloader_').hide();
+				$('#hidden_').show();
+			}, 5000);
+		});
+		
+		// var txt = document.getElementById('txt');
+		// console.log(txt);
+		// txt.value = "asdf1";
+
+		// var txt2 = document.getElementByClassName('test')[0];
+		// console.log(txt2);
+		// txt2.value = "asdf2";
 
 		$('div').prop('style', 'width:100px;') //resize all div's on page
 
@@ -118,10 +146,10 @@
 			console.log(i);
 		}
 
-		for(const key in a)
-		{
-			console.log(`key: ${key}, value: ${a[key]}`);
-		}
+		// for(const key in a)
+		// {
+		// 	console.log(`key: ${key}, value: ${a[key]}`);
+		// }
 
 		function createObj()
 		{
@@ -133,12 +161,6 @@
 			createObj();
 		}
 
-		$('#hidden').hide();
-
-		setTimeOut(function(){
-			$('#preloader_').hide();
-			$('#hidden_').show();
-		},5000);
 	</script>
 </head>
 
@@ -165,7 +187,10 @@
 	      </li>
 	      <li class="nav-item">
 	      	<a href="#videos" class="nav-link">Videos</a>
-	      </li>
+		  </li>
+		  <li class="nav-item">
+			  <a href="#switchmode" id="darkmode" class="nav-link">Dark Mode</a>
+			</li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	          Dropdown link

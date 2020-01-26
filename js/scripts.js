@@ -1,4 +1,21 @@
 $(document).ready(function(){
+
+	var switchmode = false;
+		document.getElementById('darkmode').addEventListener('click', function() {
+			if(switchmode == true)
+			{
+				console.log("casual mode");
+				document.body.style = 'background-color: azure;';
+			}
+			else
+			{
+				console.log("dark mode");
+				document.body.style = 'background-color: rgb(20, 30, 44)';
+			}
+
+			switchmode = !switchmode;
+		});
+
   $(".fancybox").fancybox({
         openEffect: "none",
         closeEffect: "none"
